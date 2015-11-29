@@ -2,7 +2,7 @@
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.3.0'
@@ -14,8 +14,16 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenLocal()
+        maven { url "file:///$System.env.ANDROID_HOME/extras/android/m2repository" }
+        maven { url "https://maven.fabric.io/public" }
+        maven { url "http://repo.maven.apache.org/maven2" }
+        mavenCentral()
     }
+}
+
+ext {
+
 }
 
 task clean(type: Delete) {
