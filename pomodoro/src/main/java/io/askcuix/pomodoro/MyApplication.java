@@ -26,7 +26,7 @@ public class MyApplication extends Application {
         Log.v(TAG, "Application onCreate");
 
         if (!AppModel.INSTANCE.hasInit()) {
-            AppModel.INSTANCE.init();
+            AppModel.INSTANCE.init(this);
         }
 
         firstLaunch = true;
