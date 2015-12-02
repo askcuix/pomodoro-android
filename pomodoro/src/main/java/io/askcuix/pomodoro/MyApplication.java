@@ -7,6 +7,8 @@ import android.content.Context;
 import android.os.*;
 import android.util.Log;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.List;
 
 import io.askcuix.pomodoro.model.AppModel;
@@ -40,6 +42,7 @@ public class MyApplication extends Application {
         super.onLowMemory();
 
         Log.w(TAG, "on low memory.");
+        ImageLoader.getInstance().clearMemoryCache();
     }
 
     public static boolean isTaskInForeground(Context context) {
